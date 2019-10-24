@@ -1,15 +1,3 @@
-// import React from 'react';
-
-// const Profile = () => {
-//     return (
-//         <div>
-//             <p>You can see this because you're registered!</p>
-//         </div>
-//     )
-// }
-
-// export default Profile;
-
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -19,16 +7,18 @@ export default function ValuesList() {
   const [Values, setValues] = useState([]);
 
   useEffect(() => {
-    axiosWithAuth().get(`http://localhost:5000/api/values`)
+    axiosWithAuth().get(`https://stormy-basin-77789.herokuapp.com/api/values`)
     .then(res => {
-      console.log('response', res.data[1].name);
-      // setValues(response);
+      console.log('response', res.data);
+      setValues(res.data);
     })
  }, []);
   
 
   return (
-        <div>Yo</div>
+        <div>{Values.map(value => {
+          return value.name
+        })}</div>
   )
     
 }

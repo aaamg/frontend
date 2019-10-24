@@ -17,7 +17,7 @@ const Register = () => {
     
     const submitHandler = e => {
         e.preventDefault();
-        axios.post('http://localhost:5000/api/auth/register', user)
+        axios.post('https://stormy-basin-77789.herokuapp.com/api/auth/register', user)
         .then(res => {
             console.log('Server response:', res);
             setUser({

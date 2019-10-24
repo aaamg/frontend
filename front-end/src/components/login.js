@@ -16,7 +16,7 @@ const Login = () => {
     const submitHandler = e => {
         e.preventDefault();
   
-        const url = 'http://localhost:5000/api/auth/login';
+        const url = 'https://stormy-basin-77789.herokuapp.com/api/auth/login';
         axios.post(url, user)
           .then(res => {
             localStorage.setItem('token', res.data.token);
